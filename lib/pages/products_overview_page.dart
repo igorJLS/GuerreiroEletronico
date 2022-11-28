@@ -80,7 +80,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : ProductGrid(_showFavoriteOnly),
-      drawer: const AppDrawer(),
+      drawer: AppDrawer(),
     );
   }
 }

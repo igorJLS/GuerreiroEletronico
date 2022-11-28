@@ -215,15 +215,6 @@ class _ProductFormPageState extends State<ProductFormPage> {
                             onFieldSubmitted: (_) => _submitForm(),
                             onSaved: (imageUrl) =>
                                 _formData['imageUrl'] = imageUrl ?? '',
-                            validator: (_imageUrl) {
-                              final imageUrl = _imageUrl ?? '';
-
-                              if (!isValidImageUrl(imageUrl)) {
-                                return 'Informe uma Url válida!';
-                              }
-
-                              return null;
-                            },
                           ),
                         ),
                         Container(

@@ -8,7 +8,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               width: 150,
               height: 150,
-              child: Image.asset("lib/assets/images/logo.png"),
+              child: Image.asset("assets/images/logo.png"),
             ),
             const SizedBox(
               height: 20,

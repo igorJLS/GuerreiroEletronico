@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tcc/exceptions/http_exception.dart';
 import 'package:tcc/models/product.dart';
 import 'package:tcc/models/product_list.dart';
 import 'package:tcc/utils/app_routes.dart';
@@ -61,12 +62,10 @@ class ProductItem extends StatelessWidget {
                         context,
                         listen: false,
                       ).removeProduct(product);
-                    } catch (error) {
+                    } on HttpException catch (error) {
                       msg.showSnackBar(
                         SnackBar(
-                          content: Text(
-                            error.toString(),
-                          ),
+                          content: Text(error.toString()),
                         ),
                       );
                     }

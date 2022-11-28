@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tcc/models/auth.dart';
 import 'package:tcc/pages/login_screen.dart';
@@ -11,6 +10,21 @@ class AuthOrHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Auth auth = Provider.of(context);
-    return auth.isAuth ? ProductsOverviewPage() : LoginScreen();
+    return FutureBuilder(
+      future: auth.tryAutoLogin(),
+      builder: ((context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (snapshot.error != null) {
+          return Center(
+            child: Text('Ocorreu um erro!'),
+          );
+        } else {
+          return auth.isAuth ? ProductsOverviewPage() : LoginScreen();
+        }
+      }),
+    );
   }
 }

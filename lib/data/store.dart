@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Store {
   static Future<bool> saveString(String key, String value) async {
     final prefs = await SharedPreferences.getInstance();
-
     return prefs.setString(key, value);
   }
 
@@ -18,9 +17,7 @@ class Store {
     return prefs.getString(key) ?? defaultValue;
   }
 
-  static Future<Map<String, dynamic>> getMap(
-    String key,
-  ) async {
+  static Future<Map<String, dynamic>> getMap(String key) async {
     try {
       return jsonDecode(await getString(key));
     } catch (_) {

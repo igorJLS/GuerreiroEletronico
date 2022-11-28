@@ -30,7 +30,7 @@ class _OrdersPageState extends State<OrdersPage> {
       appBar: AppBar(
         title: const Text('Meus Pedidos'),
       ),
-      drawer: const AppDrawer(),
+      drawer: AppDrawer(),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
