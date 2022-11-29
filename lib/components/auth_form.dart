@@ -8,13 +8,11 @@ enum AuthMode { signup, login }
 class AuthForm extends StatefulWidget {
   const AuthForm({Key? key}) : super(key: key);
 
-
   @override
   State<AuthForm> createState() => _AuthFormState();
 }
 
 class _AuthFormState extends State<AuthForm> {
-
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -42,7 +40,7 @@ class _AuthFormState extends State<AuthForm> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Ocorreo um Erro'),
+        title: const Text('Ocorreu um Erro'),
         content: Text(msg),
         actions: [
           TextButton(
@@ -52,11 +50,6 @@ class _AuthFormState extends State<AuthForm> {
         ],
       ),
     );
-  }
-
-  String Salvar(String authData) {
-    authData = _authData['email'];
-    return authData;
   }
 
   Future<void> _submit() async {
@@ -78,14 +71,12 @@ class _AuthFormState extends State<AuthForm> {
           _authData['email']!,
           _authData['password']!,
         );
-        Salvar(_authData['email']!);
       } else {
         // Registrar
         await auth.signup(
           _authData['email']!,
           _authData['password']!,
         );
-        Salvar(_authData['email']!);
       }
     } on AuthException catch (error) {
       _showErrorDialog(error.toString());

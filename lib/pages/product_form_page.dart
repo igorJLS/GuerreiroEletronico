@@ -13,10 +13,8 @@ class ProductFormPage extends StatefulWidget {
 class _ProductFormPageState extends State<ProductFormPage> {
   final _priceFocus = FocusNode();
   final _descriptionFocus = FocusNode();
-
   final _imageUrlFocus = FocusNode();
   final _imageUrlController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
   final _formData = <String, Object>{};
 
@@ -41,6 +39,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
         _formData['name'] = product.name;
         _formData['price'] = product.price;
         _formData['description'] = product.description;
+        _formData['category'] = product.category;
         _formData['imageUrl'] = product.imageUrl;
 
         _imageUrlController.text = product.imageUrl;
@@ -196,6 +195,29 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
                         if (description.trim().length < 10) {
                           return 'Descrição precisa no mínimo de 10 letras.';
+                        }
+
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      initialValue: _formData['category']?.toString(),
+                      decoration: const InputDecoration(labelText: 'Categoria'),
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) {
+                        FocusScope.of(context).requestFocus(_priceFocus);
+                      },
+                      onSaved: (category) =>
+                          _formData['category'] = category ?? '',
+                      validator: (_category) {
+                        final category = _category ?? '';
+
+                        if (category.trim().isEmpty) {
+                          return 'Categoria é obrigatório.';
+                        }
+
+                        if (category.trim().length < 3) {
+                          return 'Categoria precisa no mínimo de 3 letras.';
                         }
 
                         return null;

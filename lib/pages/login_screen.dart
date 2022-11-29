@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tcc/components/auth_form.dart';
-import 'package:tcc/pages/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

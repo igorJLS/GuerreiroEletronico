@@ -51,6 +51,7 @@ class ProductList with ChangeNotifier {
           name: productData['name'],
           description: productData['description'],
           price: productData['price'],
+          category: productData['category'],
           imageUrl: productData['imageUrl'],
           isFavorite: isFavorite,
         ),
@@ -65,6 +66,7 @@ class ProductList with ChangeNotifier {
     final product = Product(
       id: hasId ? data['id'] as String : Random().nextDouble().toString(),
       name: data['name'] as String,
+      category: data['category'] as String,
       description: data['description'] as String,
       price: data['price'] as double,
       imageUrl: data['imageUrl'] as String,
@@ -95,6 +97,7 @@ class ProductList with ChangeNotifier {
       id: id,
       name: product.name,
       description: product.description,
+      category: product.category,
       price: product.price,
       imageUrl: product.imageUrl,
     ));

@@ -11,8 +11,10 @@ class Product with ChangeNotifier {
   final double price;
   final String imageUrl;
   bool isFavorite;
+  final category;
 
   Product({
+    required this.category,
     required this.id,
     required this.name,
     required this.description,
