@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tcc/components/app_drawer.dart';
 import 'package:tcc/components/order.dart';
-import 'package:tcc/models/order_list.dart';
+import 'package:tcc/controllers/order_list.dart';
 
 class OrdersPage extends StatefulWidget {
   const OrdersPage({Key? key}) : super(key: key);

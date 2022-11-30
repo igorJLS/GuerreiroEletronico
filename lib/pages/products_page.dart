@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tcc/components/app_drawer.dart';
 import 'package:tcc/components/product_item.dart';
-import 'package:tcc/models/product_list.dart';
+import 'package:tcc/controllers/product_list.dart';
 import 'package:tcc/utils/app_routes.dart';
 
 class ProductsPage extends StatelessWidget {

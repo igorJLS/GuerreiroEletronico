@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tcc/models/auth.dart';
-import 'package:tcc/models/cart.dart';
+import 'package:tcc/controllers/cart.dart';
 import 'package:tcc/models/product.dart';
 import 'package:tcc/utils/app_routes.dart';
 

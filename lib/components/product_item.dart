@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tcc/exceptions/http_exception.dart';
 import 'package:tcc/models/product.dart';
-import 'package:tcc/models/product_list.dart';
+import 'package:tcc/controllers/product_list.dart';
 import 'package:tcc/utils/app_routes.dart';
 
 class ProductItem extends StatelessWidget {

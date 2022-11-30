@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:tcc/components/app_drawer.dart';
 import 'package:tcc/components/badge.dart';
 import 'package:tcc/components/product_grid.dart';
-import 'package:tcc/models/cart.dart';
-import 'package:tcc/models/product_list.dart';
+import 'package:tcc/controllers/cart.dart';
+import 'package:tcc/controllers/product_list.dart';
 import 'package:tcc/utils/app_routes.dart';
 
 enum FilterOptions {

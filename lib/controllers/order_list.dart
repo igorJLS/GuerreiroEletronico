@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:tcc/models/cart.dart';
+import 'package:tcc/controllers/cart.dart';
 import 'package:tcc/models/cart_item.dart';
 import 'package:tcc/models/order.dart';
 import 'package:tcc/utils/constants.dart';
